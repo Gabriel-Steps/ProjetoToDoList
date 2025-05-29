@@ -63,7 +63,7 @@ namespace BackendToDoList.Api
             app.UseSwaggerUI();
 
             //app.UseHttpsRedirection();
-
+            app.UseCors("AllowAll");
             app.UseAuthorization();
 
 
