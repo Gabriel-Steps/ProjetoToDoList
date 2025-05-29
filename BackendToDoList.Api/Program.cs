@@ -50,7 +50,7 @@ namespace BackendToDoList.Api
 
             builder.Services.AddAuthorization();
 
-            var connectionString = builder.Configuration.GetConnectionString("Default");
+            var connectionString = Environment.GetEnvironmentVariable("MYSQL_CONNECTION");
             builder.Services.AddDbContext<SistemaToDoListDbContext>(options =>
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
                .EnableSensitiveDataLogging()
